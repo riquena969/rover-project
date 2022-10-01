@@ -58,11 +58,12 @@ export default class Rover implements IRover {
     const newX = this.position.x + x;
     const newY = this.position.y + y;
 
-    if (newX < 0 || newY < 0) {
-      return this;
-    }
-
-    if (newX > this.plateau.width || newY > this.plateau.height) {
+    if (
+      newX < 0 ||
+      newY < 0 ||
+      newX > this.plateau.width ||
+      newY > this.plateau.height
+    ) {
       return this;
     }
 
